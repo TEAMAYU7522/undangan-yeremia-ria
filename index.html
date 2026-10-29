@@ -322,6 +322,206 @@
         transition: none !important;
       }
     }
+/* WEDDING GIFT PREMIUM */
+.gift-section {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px;
+  text-align: center;
+  color: #55442f;
+  background:
+    radial-gradient(ellipse at top, #fffdf7 0%, transparent 65%),
+    linear-gradient(180deg, #f8f0df, #fffdf8 55%, #f2e6d0);
+}
+
+.gift-ornament {
+  color: #b89555;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.gift-subtitle {
+  margin: 0 0 10px;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #a4864c;
+  font-weight: 600;
+}
+
+.gift-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 7vw, 48px);
+  font-weight: 400;
+  font-style: italic;
+  color: #8c6c37;
+}
+
+.gift-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px auto;
+  color: #b99a61;
+}
+
+.gift-divider span {
+  width: 55px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b99a61);
+}
+
+.gift-divider span:last-child {
+  transform: rotate(180deg);
+}
+
+.gift-description {
+  max-width: 470px;
+  margin: 0 auto 30px;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #786b5b;
+}
+
+.gift-card {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 25px;
+  text-align: left;
+  border: 1px solid #c5a66b;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 100% 0%, #f7e8c7 0%, transparent 38%),
+    linear-gradient(135deg, #fffefa, #f7efdF);
+  box-shadow:
+    0 15px 35px rgba(99, 73, 35, 0.12),
+    inset 0 0 0 4px rgba(197, 166, 107, 0.09);
+}
+
+.gift-card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(184, 149, 85, 0.28);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.gift-card-top,
+.gift-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.gift-chip {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #c4a66c;
+  border-radius: 50%;
+  color: #a38449;
+  font-size: 20px;
+}
+
+.gift-bank {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #80602d;
+}
+
+.gift-card-label {
+  margin-top: 24px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #9a8565;
+}
+
+.gift-account {
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+  font-size: clamp(20px, 5vw, 27px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #57432a;
+}
+
+.gift-card-bottom {
+  align-items: flex-end;
+  margin-top: 6px;
+}
+
+.gift-owner {
+  margin-top: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #70552f;
+  overflow-wrap: anywhere;
+}
+
+.gift-heart {
+  font-size: 22px;
+  color: #b99a61;
+}
+
+.gift-copy-btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 28px;
+  padding: 14px 10px;
+  border: 1px solid #9d7a40;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #c6a568, #9b783e);
+  color: #fffdf7;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gift-copy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(125, 92, 42, 0.2);
+}
+
+.gift-thanks {
+  margin: 28px auto 12px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #85745c;
+}
+
+.gift-couple {
+  margin-top: 18px;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #a4864c;
+}
+
+@media (max-width: 480px) {
+  .gift-section {
+    padding: 45px 16px;
+  }
+
+  .gift-card {
+    padding: 21px;
+  }
+
+  .gift-bank {
+    font-size: 13px;
+  }
+}
   </style>
 </head>
 
@@ -661,5 +861,74 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
+<!-- WEDDING GIFT - YEREMIA & RIA -->
+<section class="gift-section" id="wedding-gift">
+  <div class="gift-ornament">✦</div>
+
+  <p class="gift-subtitle">A LITTLE GIFT OF LOVE</p>
+  <h2 class="gift-title">Wedding Gift</h2>
+
+  <div class="gift-divider">
+    <span></span> ♡ <span></span>
+  </div>
+
+  <p class="gift-description">
+    Kehadiran dan doa restu Anda merupakan hadiah terindah
+    bagi kami. Namun, jika ingin berbagi kebahagiaan,
+    Anda dapat menggunakan informasi rekening berikut.
+  </p>
+
+  <div class="gift-card">
+    <div class="gift-card-top">
+      <span class="gift-chip">♡</span>
+      <span class="gift-bank">BANK BCA</span>
+    </div>
+
+    <div class="gift-card-label">NOMOR REKENING</div>
+
+    <div class="gift-account" id="nomorRekening">
+      088809990888
+    </div>
+
+    <div class="gift-card-bottom">
+      <div>
+        <div class="gift-card-label">ATAS NAMA</div>
+        <div class="gift-owner">KEHIDUPUNK</div>
+      </div>
+
+      <span class="gift-heart">♥</span>
+    </div>
+
+    <button class="gift-copy-btn" onclick="salinRekening()">
+      <span>▣</span> SALIN NOMOR REKENING
+    </button>
+  </div>
+
+  <p class="gift-thanks">
+    Terima kasih atas kasih dan doa yang diberikan.
+  </p>
+
+  <div class="gift-couple">YEREMIA &amp; RIA</div>
+</section>
+
+<script>
+function salinRekening() {
+  const nomor = document
+    .getElementById("nomorRekening")
+    .innerText.trim();
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(nomor)
+      .then(() => alert("Nomor rekening berhasil disalin!"))
+      .catch(() => salinManual(nomor));
+  } else {
+    salinManual(nomor);
+  }
+}
+
+function salinManual(nomor) {
+  window.prompt("Silakan salin nomor rekening berikut:", nomor);
+}
+</script>
 </body>
 </html>
