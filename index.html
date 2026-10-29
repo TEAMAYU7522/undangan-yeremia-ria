@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17130f">
+  <meta name="description" content="Undangan Pernikahan Kami. Merupakan kebahagiaan bagi kami jika Anda hadir.">
+  <title>Undangan Pernikahan | The Wedding</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #d8b66a;
+      --gold-light: #f6e4a9;
+      --cream: #fff8e9;
+      --dark: #17130f;
+      --muted: #b9ab91;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--dark);
+      color: var(--cream);
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 28px 18px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(18,13,8,.58), rgba(18,13,8,.90)),
+        url("https://i.ibb.co/6cMKNGBP/Glamorous-Couple-in-a-Luxury-Interior.png")
+        center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(216,182,106,.65);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(100%, 650px);
+      position: relative;
+      animation: appear 1.2s ease both;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+
+    h1, h2, h3, .names {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(42px, 9vw, 76px);
+      line-height: 1.05;
+      margin: 22px 0;
+      color: var(--gold-light);
+    }
+
+    .ampersand {
+      display: block;
+      font-size: 38px;
+      color: var(--gold);
+      margin: -8px 0;
+    }
+
+    .hero p { color: #f3e7d0; }
+
+    .gold-line {
+      width: 85px;
+      height: 1px;
+      background: var(--gold);
+      margin: 24px auto;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      background: var(--gold);
+      color: #21180c;
+      padding: 12px 22px;
+      font: 500 12px "Poppins", sans-serif;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--gold-light);
+    }
+
+    section {
+      padding: 76px 20px;
+      text-align: center;
+    }
+
+    .section-inner {
+      width: min(100%, 760px);
+      margin: auto;
+    }
+
+    .light-section {
+      background: #f6efdf;
+      color: #33291c;
+    }
+
+    .section-label {
+      color: #a17d37;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      color: var(--gold);
+      font-size: clamp(34px, 7vw, 48px);
+      line-height: 1.15;
+      margin: 10px 0 20px;
+    }
+
+    .light-section h2 { color: #806026; }
+
+    .intro {
+      max-width: 580px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+    }
+
+    .light-section .intro { color: #6d6252; }
+
+    .couple-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .couple-card {
+      padding: 24px 12px;
+      border: 1px solid rgba(180,143,69,.35);
+      background: rgba(255,255,255,.45);
+    }
+
+    .monogram {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      border: 1px solid #b99b5b;
+      display: grid;
+      place-items: center;
+      color: #987436;
+      font: 36px "Cormorant Garamond", serif;
+    }
+
+    .names {
+      font-size: clamp(25px, 5vw, 34px);
+      color: #8a672c;
+      line-height: 1.2;
+    }
+
+    .small { font-size: 12px; color: #786d5c; }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      max-width: 470px;
+      margin: 30px auto 0;
+    }
+
+    .time-box {
+      border: 1px solid rgba(216,182,106,.55);
+      padding: 15px 4px;
+    }
+
+    .time-box strong {
+      display: block;
+      color: var(--gold-light);
+      font: 34px "Cormorant Garamond", serif;
+    }
+
+    .time-box span {
+      font-size: 9px;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    .event-card {
+      margin: 24px auto;
+      padding: 28px 20px;
+      border: 1px solid #c5a76c;
+      max-width: 520px;
+    }
+
+    .event-card h3 {
+      font-size: 30px;
+      color: #8a672c;
+      margin: 0 0 10px;
+    }
+
+    .event-card p { margin: 8px 0; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 30px auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border: 1px solid rgba(216,182,106,.5);
+    }
+
+    .gallery img:first-child {
+      grid-column: 1 / -1;
+      height: 320px;
+    }
+
+    .rsvp-form {
+      max-width: 470px;
+      margin: 25px auto 0;
+      text-align: left;
+    }
+
+    .rsvp-form label {
+      display: block;
+      margin: 14px 0 5px;
+      color: var(--gold-light);
+      font-size: 12px;
+    }
+
+    .rsvp-form input,
+    .rsvp-form select,
+    .rsvp-form textarea {
+      width: 100%;
+      padding: 12px;
+      color: white;
+      background: #252019;
+      border: 1px solid #77603b;
+      border-radius: 3px;
+      font: 13px "Poppins", sans-serif;
+    }
+
+    .rsvp-form textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .rsvp-form .button {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    footer {
+      padding: 34px 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    footer strong { color: var(--gold); }
+
+    .hidden { display: none !important; }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 520px) {
+      section { padding: 58px 18px; }
+      .couple-grid { gap: 10px; }
+      .couple-card { padding: 20px 8px; }
+      .monogram { width: 76px; height: 76px; font-size: 29px; }
+      .gallery img { height: 180px; }
+      .gallery img:first-child { height: 240px; }
+      .hero::before { inset: 10px; }
+      .eyebrow { letter-spacing: 2px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HALAMAN PEMBUKA -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">The Wedding Invitation</div>
+      <div class="gold-line"></div>
+      <p>Dengan penuh rasa syukur, kami mengundang Anda</p>
+
+      <h1>
+        <span id="heroBride">YEREMIA OCTAVIANUS WAIRATA</span>
+        <span class="ampersand">&amp;</span>
+        <span id="heroGroom">RIA RIZKY YERR</span>
+      </h1>
+
+      <div class="gold-line"></div>
+      <p id="heroDate">Sabtu, 01 NOVEMBER 2026</p>
+      <p>Kepada Yth.</p>
+      <p id="guestName">Bapak/Ibu/Saudara/i</p>
+
+      <button class="button" id="openInvitation">
+        Buka Undangan ↓
+      </button>
+    </div>
+  </header>
+
+  <main id="invitation" class="hidden">
+
+    <!-- SALAM PEMBUKA -->
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Assalamu'alaikum Warahmatullahi Wabarakatuh</div>
+        <h2>Hari Bahagia Kami</h2>
+        <p class="intro">
+          Dengan memohon rahmat dan ridha Allah SWT, kami bermaksud
+          menyelenggarakan pernikahan putra-putri kami. Merupakan
+          kebahagiaan bagi kami apabila Anda berkenan hadir dan
+          memberikan doa restu.
+        </p>
+        <div class="gold-line"></div>
+        <p style="color:var(--gold-light)">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+      </div>
+    </section>
+
+    <!-- MEMPELAI -->
+    <section class="light-section">
+      <div class="section-inner">
+        <div class="section-label">The Bride & Groom</div>
+        <h2>Kedua Mempelai</h2>
+
+        <div class="couple-grid">
+          <article class="couple-card">
+            <div class="monogram" id="brideInitial">A</div>
+            <div class="names" id="brideName">YEREMIA OCTAVIANUS WAIRATA</div>
+            <p class="small" id="brideParents">
+              Putri dari Bapak ... & Ibu ...
+            </p>
+          </article>
+
+          <article class="couple-card">
+            <div class="monogram" id="groomInitial">B</div>
+            <div class="names" id="groomName">RIA RIZKY YERR</div>
+            <p class="small" id="groomParents">
+              Putra dari Bapak ... & Ibu ...
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HITUNG MUNDUR -->
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Save the Date</div>
+        <h2>Menuju Hari Bahagia</h2>
+        <p class="intro">Sebuah hari istimewa untuk memulai perjalanan bersama, Cinta tercipta LOKAP VIP .</p>
+
+        <div class="countdown" aria-live="polite">
+          <div class="time-box"><strong id="days">00</strong><span>HARI</span></div>
+          <div class="time-box"><strong id="hours">00</strong><span>JAM</span></div>
+          <div class="time-box"><strong id="minutes">00</strong><span>MENIT</span></div>
+          <div class="time-box"><strong id="seconds">00</strong><span>DETIK</span></div>
+        </div>
+        <p id="countdownMessage" style="color:var(--gold);margin-top:20px"></p>
+      </div>
+    </section>
+
+    <!-- DETAIL ACARA -->
+    <section class="light-section">
+      <div class="section-inner">
+        <div class="section-label">Wedding Celebration</div>
+        <h2>Detail Acara</h2>
+
+        <article class="event-card">
+          <h3>Akad Nikah</h3>
+          <p id="akadDate">Sabtu, 20 Desember 2026</p>
+          <p id="akadTime">08.00 WIB – selesai</p>
+          <p id="venue">Nama Gedung / Lokasi Acara</p>
+        </article>
+
+        <article class="event-card">
+          <h3>Resepsi</h3>
+          <p id="receptionDate">Sabtu, 20 Desember 2026</p>
+          <p id="receptionTime">11.00 WIB – selesai</p>
+          <p id="venue2">Nama Gedung / Lokasi Acara</p>
+        </article>
+
+        <a class="button" id="mapsButton" href="https://maps.google.com/?q=SWASANA GRAND SLIPI CONVENTION HALL"
+           target="_blank" rel="noopener noreferrer">
+          Lihat Lokasi di Google Maps
+        </a>
+      </div>
+    </section>
+
+    <!-- GALERI FOTO -->
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Our Memories</div>
+        <h2>Galeri Kami</h2>
+        <p class="intro">Beberapa kenangan yang menjadi bagian dari perjalanan kami.</p>
+
+        <div class="gallery">
+          <img src="https://i.ibb.co/k243g43z/Cinematic-Luxury-Wedding-Portraits-2.png"
+               alt="Foto pasangan 1" loading="lazy">
+          <img src="https://i.ibb.co/k243g43z/Cinematic-Luxury-Wedding-Portraits-2.png"
+               alt="Foto pasangan 2" loading="lazy">
+          <img src="https://i.ibb.co/6cMKNGBP/Glamorous-Couple-in-a-Luxury-Interior.png"
+               alt="Foto pasangan" loading="lazy">
+        </div>
+        <p class="small">Ganti foto contoh ini dengan foto prewedding kalian.</p>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Kindly Respond</div>
+        <h2>Konfirmasi Kehadiran</h2>
+        <p class="intro">
+          Mohon beritahu kami apakah Anda dapat hadir.
+          Konfirmasi akan dikirim melalui WhatsApp.
+        </p>
+
+        <form class="rsvp-form" id="rsvpForm">
+          <label for="rsvpName">Nama Anda</label>
+          <input id="rsvpName" name="name" required
+                 placeholder="Masukkan nama Anda">
+
+          <label for="attendance">Konfirmasi kehadiran</label>
+          <select id="attendance" name="attendance" required>
+            <option value="Hadir">Ya, saya akan hadir</option>
+            <option value="Tidak dapat hadir">Maaf, saya belum bisa hadir</option>
+          </select>
+
+          <label for="guestCount">Jumlah tamu</label>
+          <select id="guestCount" name="guestCount">
+            <option value="1 orang">1 orang</option>
+            <option value="2 orang">2 orang</option>
+            <option value="3 orang">3 orang</option>
+            <option value="4 orang">4 orang</option>
+          </select>
+
+          <label for="message">Ucapan dan doa</label>
+          <textarea id="message" name="message"
+                    placeholder="Tuliskan ucapan untuk kedua mempelai"></textarea>
+
+          <button class="button" type="submit">
+            Kirim Konfirmasi WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- PENUTUP -->
+    <section class="light-section">
+      <div class="section-inner">
+        <div class="section-label">Thank You</div>
+        <h2>Merupakan Kehormatan</h2>
+        <p class="intro">
+          Kehadiran dan doa restu Anda merupakan kebahagiaan yang
+          sangat berarti bagi kami.
+        </p>
+        <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        <div class="gold-line"></div>
+        <h2 id="closingNames" style="font-size:36px">Nama Mempelai & Nama Mempelai</h2>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Dibuat dengan cinta untuk hari yang istimewa.
+    <br><strong>KEHIDUPUNK BY GUTSRIOT </strong>
+  </footer>
+
+  <script>
+    /*
+      =====================================================
+      UBAH DATA UNDANGAN DI BAGIAN INI
+      Tanggal countdown menggunakan format ISO:
+      YYYY-MM-DDTHH:mm:ss+07:00 untuk WIB.
+      =====================================================
+    */
+
+    const WEDDING = {
+      bride: "YEREMIA OCTAVIANUS WAIRATA",
+      groom: "RIA RIZKY YERR",
+
+      brideParents: "Putri dari Bapak BABE YERE & Ibu MADAM YERE",
+      groomParents: "Putra dari Bapak BABE CRIS & Ibu MADAM CAROLINA",
+
+      dateText: "Minggu, 01 November 2026",
+
+      // Ganti dengan tanggal dan jam acara sebenarnya.
+      // Contoh: 2026-11-01T08:00:00+07:00
+      dateISO: "2026-11-01T08:00:00+07:00",
+
+      akadTime: "08.00 WIB – selesai",
+      receptionTime: "11.00 WIB – selesai",
+
+      venue: "SWASANA GRAND SLIPI CONVENTION HALL, JAKARTA",
+      mapsURL: "https://maps.google.com/?q=SWASANA GRAND SLIPI CONVENTION HALL",
+
+      // Gunakan kode negara dan nomor WhatsApp tujuan.
+      // Contoh Indonesia: 6281234567890
+      // Ganti dengan nomor milik penerima konfirmasi.
+      whatsapp: "6281234567890"
+    };
+
+    const byId = id => document.getElementById(id);
+
+    function setText(id, value) {
+      byId(id).textContent = value;
+    }
+
+    function initials(name) {
+      return name.trim().charAt(0).toUpperCase() || "?";
+    }
+
+    function setupInvitation() {
+      setText("heroBride", WEDDING.bride);
+      setText("heroGroom", WEDDING.groom);
+      setText("brideName", WEDDING.bride);
+      setText("groomName", WEDDING.groom);
+      setText("brideParents", WEDDING.brideParents);
+      setText("groomParents", WEDDING.groomParents);
+      setText("brideInitial", initials(WEDDING.bride));
+      setText("groomInitial", initials(WEDDING.groom));
+      setText("heroDate", WEDDING.dateText);
+      setText("akadDate", WEDDING.dateText);
+      setText("receptionDate", WEDDING.dateText);
+      setText("akadTime", WEDDING.akadTime);
+      setText("receptionTime", WEDDING.receptionTime);
+      setText("venue", WEDDING.venue);
+      setText("venue2", WEDDING.venue);
+      setText("closingNames", WEDDING.bride + " & " + WEDDING.groom);
+
+      byId("mapsButton").href = WEDDING.mapsURL;
+
+      // Nama tamu dapat diisi melalui tautan:
+      // ?to=Nama%20Tamu
+      const params = new URLSearchParams(window.location.search);
+      const guest = params.get("to");
+      if (guest) {
+        setText("guestName", guest);
+        byId("rsvpName").value = guest;
+      }
+    }
+
+    byId("openInvitation").addEventListener("click", () => {
+      byId("invitation").classList.remove("hidden");
+      byId("invitation").scrollIntoView({ behavior: "smooth" });
+    });
+
+    function updateCountdown() {
+      const target = new Date(WEDDING.dateISO).getTime();
+      const now = Date.now();
+      let distance = target - now;
+
+      if (!Number.isFinite(target)) {
+        setText("countdownMessage", "Periksa format tanggal acara.");
+        return;
+      }
+
+      if (distance <= 0) {
+        ["days", "hours", "minutes", "seconds"].forEach(id => setText(id, "00"));
+        setText("countdownMessage", "Hari istimewa kami telah tiba. Terima kasih!");
+        return;
+      }
+
+      const days = Math.floor(distance / 86400000);
+      distance %= 86400000;
+      const hours = Math.floor(distance / 3600000);
+      distance %= 3600000;
+      const minutes = Math.floor(distance / 60000);
+      const seconds = Math.floor((distance % 60000) / 1000);
+
+      setText("days", String(days).padStart(2, "0"));
+      setText("hours", String(hours).padStart(2, "0"));
+      setText("minutes", String(minutes).padStart(2, "0"));
+      setText("seconds", String(seconds).padStart(2, "0"));
+      setText("countdownMessage", "Kami menantikan hari bahagia ini bersama Anda.");
+    }
+
+    byId("rsvpForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      if (WEDDING.whatsapp === "6281234567890") {
+        alert("Min, ganti nomor WhatsApp contoh di bagian WEDDING terlebih dahulu.");
+        return;
+      }
+
+      const name = byId("rsvpName").value.trim();
+      const attendance = byId("attendance").value;
+      const count = byId("guestCount").value;
+      const message = byId("message").value.trim();
+
+      const text = [
+        "Konfirmasi Undangan Pernikahan",
+        "Mempelai: " + WEDDING.bride + " & " + WEDDING.groom,
+        "Nama tamu: " + name,
+        "Kehadiran: " + attendance,
+        "Jumlah tamu: " + count,
+        "Ucapan: " + (message || "-")
+      ].join("\n");
+
+      const url = "https://wa.me/" + WEDDING.whatsapp
+        + "?text=" + encodeURIComponent(text);
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+
+    setupInvitation();
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
